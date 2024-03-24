@@ -3,18 +3,18 @@ def arithmetic_arranger(problems,cond=None):
   soper = list()
   oper = list()
   rslt= list()
-  fline= str()
-  sline= str()
-  uline= str()
-  rline= str()
+  fline= ''
+  sline= ''
+  uline= ''
+  rline= ''
   #print(f'len',len(problems))
   if len(problems) > 5:
     return ("Error: Too many problems")
 
   #Splitting the operands for problem in problems:
   for problem in problems:
-    problem.lstrip()
-    problem.rstrip()
+    #problem.lstrip()
+    #problem.rstrip()
     sproblem= problem.split()
     if len(sproblem[0]) > 4 or len(sproblem[2]) > 4:
       return("Error: Numbers cannot be more than four digits")
@@ -34,9 +34,11 @@ def arithmetic_arranger(problems,cond=None):
       return("Error: Numbers must only contain digits")
     #arithmetic operations
     if oper[counter]== '+':
-      rslt.append(str(x+y))
+      sumas=x+y
+      rslt.append(sumas.__str__())
     elif oper[counter]=='-':
-      rslt.append(str(x-y))
+      restas=x-y
+      rslt.append(restas.__str__())
 
     #Finding lenght of longest operand
     length=max(len(foper[counter]),len(soper[counter]))
